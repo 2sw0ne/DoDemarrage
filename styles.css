@@ -128,7 +128,7 @@ h2.title em,.tg-cta .big b,.famille .now-can h3 em{
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
   clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
-.hero-visual{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1}
+.hero-visual{position:absolute;top:84px;left:0;right:0;width:100%;height:calc(100% - 84px);object-fit:cover;object-position:center;z-index:1}
 .hero::after{
   content:"";position:absolute;left:0;right:0;bottom:0;height:22%;z-index:1;pointer-events:none;
   background:linear-gradient(0deg, var(--bg) 0%, var(--bg) 8%, rgba(7,7,7,0) 100%);
