@@ -96,10 +96,13 @@ h2.title em,.tg-cta .big b,.famille .now-can h3 em{
   position:fixed;top:0;left:0;right:0;z-index:50;
   display:flex;align-items:center;justify-content:space-between;
   padding:20px clamp(20px,5vw,56px);
-  transition:background .4s,backdrop-filter .4s,border-color .4s;
-  border-bottom:1px solid transparent;
+  background:rgba(7,7,7,.3);
+  backdrop-filter:blur(20px) saturate(1.3);
+  -webkit-backdrop-filter:blur(20px) saturate(1.3);
+  transition:background .4s,border-color .4s;
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
-.nav.solid{background:rgba(7,8,10,.74);backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+.nav.solid{background:rgba(7,8,10,.74);border-bottom-color:var(--line)}
 .nav .brand{font-family:var(--cond);font-weight:700;letter-spacing:.06em;font-size:15px;text-transform:uppercase}
 .nav .brand sup{font-size:.5em;opacity:.6;vertical-align:super}
 .nav .links{display:flex;gap:22px;font-family:var(--cond);font-weight:500;letter-spacing:.18em;font-size:14px;color:var(--muted)}
@@ -127,8 +130,8 @@ h2.title em,.tg-cta .big b,.famille .now-can h3 em{
 
 .hero-visual{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1}
 .hero::after{
-  content:"";position:absolute;left:0;right:0;bottom:0;height:45%;z-index:1;pointer-events:none;
-  background:linear-gradient(0deg, var(--bg) 0%, rgba(7,7,7,.55) 45%, rgba(7,7,7,0) 100%);
+  content:"";position:absolute;left:0;right:0;bottom:0;height:22%;z-index:1;pointer-events:none;
+  background:linear-gradient(0deg, var(--bg) 0%, var(--bg) 8%, rgba(7,7,7,0) 100%);
 }
 
 .scrollhint{position:absolute;bottom:38px;left:50%;transform:translateX(-50%);z-index:2;
