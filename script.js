@@ -34,4 +34,39 @@
     window.addEventListener('resize', onEnd, {passive:true});
     onEnd();
   }
+
+  // switch Trading / UGC
+  var body = document.body;
+  var modeBtns = document.querySelectorAll('.mode-btn');
+  var swapImgs = document.querySelectorAll('img[data-ugc-src]');
+  var hoursEls = document.querySelectorAll('.js-hours');
+  var bandIntro = document.querySelector('.js-band-intro');
+
+  function applyMode(mode){
+    body.setAttribute('data-mode', mode);
+    modeBtns.forEach(function(b){
+      var on = b.getAttribute('data-mode-btn') === mode;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    swapImgs.forEach(function(img){
+      if(!img.dataset.tradingSrc){ img.dataset.tradingSrc = img.getAttribute('src'); }
+      img.src = mode === 'ugc' ? img.dataset.ugcSrc : img.dataset.tradingSrc;
+    });
+    hoursEls.forEach(function(el){
+      el.textContent = mode === 'ugc' ? el.dataset.ugcText : el.dataset.tradingText;
+    });
+    if(bandIntro){
+      bandIntro.alt = mode === 'ugc' ? bandIntro.dataset.ugcAlt : bandIntro.dataset.tradingAlt;
+    }
+    try{ localStorage.setItem('dceo-mode', mode); }catch(e){}
+  }
+
+  modeBtns.forEach(function(b){
+    b.addEventListener('click', function(){ applyMode(b.getAttribute('data-mode-btn')); });
+  });
+
+  var savedMode = 'trading';
+  try{ savedMode = localStorage.getItem('dceo-mode') || 'trading'; }catch(e){}
+  applyMode(savedMode);
 })();

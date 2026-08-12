@@ -12,13 +12,17 @@
 <title>DIGITAL CEO — Dossier de démarrage</title>
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-mode="trading">
 
 <!-- ============ NAV ============ -->
 <nav class="nav">
   <div class="brand">Digital&nbsp;CEO&nbsp;Land<sup>®</sup></div>
+  <div class="mode-switch" role="tablist" aria-label="Choix du parcours">
+    <button type="button" class="mode-btn" data-mode-btn="trading" role="tab" aria-selected="true">Trading</button>
+    <button type="button" class="mode-btn" data-mode-btn="ugc" role="tab" aria-selected="false">UGC</button>
+  </div>
   <div class="nav-ctas">
-    <a class="cta cta-ghost" href="https://www.bedigitalceo.com/" target="_blank" rel="noopener">Protocole</a>
+    <a class="cta cta-ghost" href="https://joinomniworld.com/" target="_blank" rel="noopener">Roadmap</a>
     <a class="cta" href="https://dceo.webflow.io/accueil" target="_blank" rel="noopener">Commencer <span class="spark">✦</span></a>
   </div>
 </nav>
@@ -157,12 +161,12 @@
       </article>
 
       <article class="ref-card reveal">
-        <div class="ph"><img src="img/ref-bastian.png" alt="Bastian Tallec"></div>
+        <div class="ph"><img src="img/ref-swann.png" alt="Swann Lafon"></div>
         <div class="body">
           <div class="rank">Platinum</div>
-          <div class="nm">Bastian Tallec</div>
-          <div class="desc">Éducateur FOREX · +1 500 accompagnés · +5 ans · Entrepreneur &amp; scanner developer.</div>
-          <span class="ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@bastian_tlc</span>
+          <div class="nm">Swann Lafon</div>
+          <div class="desc">+500 personnes accompagnées · +2 ans · Designer &amp; scanner developer.</div>
+          <span class="ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@2sw0ne</span>
         </div>
       </article>
 
@@ -177,22 +181,12 @@
       </article>
 
       <article class="ref-card reveal">
-        <div class="ph"><img src="img/ref-quentin.png" alt="Quentin Boldarino"></div>
+        <div class="ph"><img src="img/ref-bastian.png" alt="Bastian Tallec"></div>
         <div class="body">
           <div class="rank">Platinum</div>
-          <div class="nm">Quentin Boldarino</div>
-          <div class="desc">+500 personnes accompagnées · +4 ans d'expérience · Speaker &amp; athlète.</div>
-          <span class="ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@boldarino</span>
-        </div>
-      </article>
-
-      <article class="ref-card reveal">
-        <div class="ph"><img src="img/ref-swann.png" alt="Swann Lafon"></div>
-        <div class="body">
-          <div class="rank">Platinum</div>
-          <div class="nm">Swann Lafon</div>
-          <div class="desc">+500 personnes accompagnées · +2 ans · Designer &amp; scanner developer.</div>
-          <span class="ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@2sw0ne</span>
+          <div class="nm">Bastian Tallec</div>
+          <div class="desc">Éducateur FOREX · +1 500 accompagnés · +5 ans · Entrepreneur &amp; scanner developer.</div>
+          <span class="ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@bastian_tlc</span>
         </div>
       </article>
 
@@ -202,6 +196,16 @@
           <div class="rank">Gold</div>
           <div class="nm">Berat BFC</div>
           <div class="desc">Éducateur IA · +300 personnes accompagnées · +2 ans · Entrepreneur &amp; développeur.</div>
+        </div>
+      </article>
+
+      <article class="ref-card reveal">
+        <div class="ph"><img src="img/ref-quentin.png" alt="Quentin Boldarino"></div>
+        <div class="body">
+          <div class="rank">Platinum</div>
+          <div class="nm">Quentin Boldarino</div>
+          <div class="desc">+500 personnes accompagnées · +4 ans d'expérience · Speaker &amp; athlète.</div>
+          <span class="ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@boldarino</span>
         </div>
       </article>
 
@@ -281,8 +285,13 @@
       <div class="found-lab">Fondamentaux <span class="green">100%</span></div>
       <div class="found-plus">+</div>
       <div class="found-intro">
-        <div class="band"><img src="img/band-intro.png" alt="Introduction — Le trading"></div>
-        <div class="eq">= <b style="opacity: 0.8">1h25</b></div>
+        <div class="band"><img class="js-band-intro" src="img/band-intro.png" data-ugc-src="img/band-intro-ugc.png" data-trading-alt="Introduction — Le trading" data-ugc-alt="Introduction — UGC" alt="Introduction — Le trading"></div>
+        <div class="eq">= <b style="opacity: 0.8" class="js-hours" data-trading-text="1h25" data-ugc-text="1h50">1h25</b></div>
+      </div>
+      <div class="ugc-link-block" data-ugc-only>
+        <span class="qr-cap">scan moi</span>
+        <img class="qr" src="img/qrcode-ugc.jpg" alt="QR code UGC" style="width: 81px">
+        <div class="mac-url"><a href="https://youtu.be/bSjviOAnQW4" target="_blank" rel="noopener">https://youtu.be/bSjviOAnQW4</a></div>
       </div>
     </div>
   </div>
@@ -297,11 +306,11 @@
     </div>
     <div class="apps-2">
       <div class="app-col reveal">
-        <img class="app-grid" src="img/app-iphone.png" alt="Applications iPhone">
+        <img class="app-grid" src="img/app-iphone.png" data-ugc-src="img/app-iphone-ugc.png" alt="Applications iPhone">
         <img class="badge" src="img/badge-appstore.png" alt="Télécharger dans l'App Store">
       </div>
       <div class="app-col reveal">
-        <img class="app-grid" src="img/app-google.png" alt="Applications Android">
+        <img class="app-grid" src="img/app-google.png" data-ugc-src="img/app-google-ugc.png" alt="Applications Android">
         <img class="badge" src="img/badge-googleplay.png" alt="Disponible sur Google Play">
       </div>
     </div>
@@ -343,11 +352,11 @@
 
     <div class="unlock-stage reveal">
       <!-- paire gauche superposée -->
-      <div class="app-lock al-sm al-tl" data-id="al1" style="left:9.1%;top:3.2%;right:auto;bottom:auto"><img src="img/app-1g-a.png" alt=""><div class="deny"><svg viewBox="0 0 48 56" fill="none"><path d="M14 26 V18 a10 10 0 0 1 20 0 V26" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/><rect x="9" y="25" width="30" height="26" rx="6" fill="#fff"/><circle cx="24" cy="36" r="3.4" fill="#0a0a0a"/></svg></div></div>
-      <div class="app-lock al-sm al-tl2" data-id="al2" style="left:17.4%;top:12.4%;right:auto;bottom:auto"><img src="img/app-1g-b.png" alt=""><div class="deny"><svg viewBox="0 0 48 56" fill="none"><path d="M14 26 V18 a10 10 0 0 1 20 0 V26" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/><rect x="9" y="25" width="30" height="26" rx="6" fill="#fff"/><circle cx="24" cy="36" r="3.4" fill="#0a0a0a"/></svg></div></div>
+      <div class="app-lock al-sm al-tl" data-id="al1" style="left:9.1%;top:3.2%;right:auto;bottom:auto"><img src="img/app-1g-a.png" data-ugc-src="img/app-1g-a-ugc.png" alt=""><div class="deny"><svg viewBox="0 0 48 56" fill="none"><path d="M14 26 V18 a10 10 0 0 1 20 0 V26" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/><rect x="9" y="25" width="30" height="26" rx="6" fill="#fff"/><circle cx="24" cy="36" r="3.4" fill="#0a0a0a"/></svg></div></div>
+      <div class="app-lock al-sm al-tl2" data-id="al2" style="left:17.4%;top:12.4%;right:auto;bottom:auto"><img src="img/app-1g-b.png" data-ugc-src="img/app-1g-b-ugc.png" alt=""><div class="deny"><svg viewBox="0 0 48 56" fill="none"><path d="M14 26 V18 a10 10 0 0 1 20 0 V26" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/><rect x="9" y="25" width="30" height="26" rx="6" fill="#fff"/><circle cx="24" cy="36" r="3.4" fill="#0a0a0a"/></svg></div></div>
 
       <!-- paire droite superposée -->
-      <div class="app-lock al-sm al-tr" data-id="al3" style="left:82.3%;top:22%;right:auto;bottom:auto"><img src="img/app-1d-a.png" alt=""><div class="deny"><svg viewBox="0 0 48 56" fill="none"><path d="M14 26 V18 a10 10 0 0 1 20 0 V26" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/><rect x="9" y="25" width="30" height="26" rx="6" fill="#fff"/><circle cx="24" cy="36" r="3.4" fill="#0a0a0a"/></svg></div></div>
+      <div class="app-lock al-sm al-tr" data-id="al3" style="left:82.3%;top:22%;right:auto;bottom:auto"><img src="img/app-1d-a.png" data-ugc-src="img/app-1d-a-ugc.png" alt=""><div class="deny"><svg viewBox="0 0 48 56" fill="none"><path d="M14 26 V18 a10 10 0 0 1 20 0 V26" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/><rect x="9" y="25" width="30" height="26" rx="6" fill="#fff"/><circle cx="24" cy="36" r="3.4" fill="#0a0a0a"/></svg></div></div>
       <div class="app-lock al-sm al-tr2" data-id="al4" style="left:75.7%;top:32%;right:auto;bottom:auto"><img src="img/app-1d-b.png" alt=""><div class="deny"><svg viewBox="0 0 48 56" fill="none"><path d="M14 26 V18 a10 10 0 0 1 20 0 V26" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/><rect x="9" y="25" width="30" height="26" rx="6" fill="#fff"/><circle cx="24" cy="36" r="3.4" fill="#0a0a0a"/></svg></div></div>
 
       <!-- deux logos du bas, plus gros -->
@@ -374,7 +383,7 @@
         <ul class="unlock-list">
           <li style="font-size: 23px">Création de compte sur les applications.</li>
           <li style="font-size: 23px">Initiation à toutes les plateformes.</li>
-          <li style="font-size: 19px;white-space:nowrap">Gameplan personnalisé sur <a class="inline-link" href="https://www.bedigitalceo.com/" target="_blank" rel="noopener">bedigitalceo.com</a></li>
+          <li style="font-size: 19px;white-space:nowrap">Objectif de la semaine sur <a class="inline-link" href="https://joinomniworld.com/" target="_blank" rel="noopener">ROADMAP</a></li>
           <li style="font-size: 23px">Accès aux prochaines missions.</li>
         </ul>
       </div>

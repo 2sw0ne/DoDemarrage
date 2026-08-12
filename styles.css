@@ -94,7 +94,7 @@ h2.title em,.tg-cta .big b,.famille .now-can h3 em{
 /* ---------- nav ---------- */
 .nav{
   position:fixed;top:0;left:0;right:0;z-index:50;
-  display:flex;align-items:center;justify-content:space-between;
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;
   padding:20px clamp(20px,5vw,56px);
   background:rgba(7,7,7,.3);
   backdrop-filter:blur(20px) saturate(1.3);
@@ -103,6 +103,21 @@ h2.title em,.tg-cta .big b,.famille .now-can h3 em{
   border-bottom:1px solid rgba(255,255,255,.08);
 }
 .nav.solid{background:rgba(7,8,10,.74);border-bottom-color:var(--line)}
+.nav .brand{justify-self:start}
+.nav-ctas{justify-self:end}
+
+.mode-switch{justify-self:center;display:flex;align-items:center;gap:2px;padding:4px;
+  border:1px solid var(--line-2);border-radius:999px;background:rgba(255,138,61,.05)}
+.mode-switch .mode-btn{border:none;background:transparent;color:var(--muted);font-family:var(--body);
+  font-size:13px;font-weight:600;padding:7px 18px;border-radius:999px;cursor:pointer;
+  transition:color .3s,background .3s;white-space:nowrap}
+.mode-switch .mode-btn:hover{color:var(--ink)}
+.mode-switch .mode-btn.active{background:var(--blue);color:#1a0d02}
+@media(max-width:640px){
+  .mode-switch .mode-btn{padding:6px 12px;font-size:12px}
+  .nav{grid-template-columns:auto auto 1fr}
+}
+@media(max-width:460px){.nav .brand{font-size:12px}}
 .nav .brand{font-family:var(--cond);font-weight:700;letter-spacing:.06em;font-size:15px;text-transform:uppercase}
 .nav .brand sup{font-size:.5em;opacity:.6;vertical-align:super}
 .nav .links{display:flex;gap:22px;font-family:var(--cond);font-weight:500;letter-spacing:.18em;font-size:14px;color:var(--muted)}
@@ -260,6 +275,15 @@ h2.title em,.tg-cta .big b,.famille .now-can h3 em{
 .mac-stage .qr{position:absolute;width:7.5%;min-width:64px;right:14%;bottom:21%;border-radius:8px;border:2px solid #fff;z-index:4;box-shadow:0 10px 30px rgba(0,0,0,.5)}
 .mac-stage .qr-cap{position:absolute;right:22.5%;bottom:25%;z-index:4;font-family:var(--cond);text-transform:uppercase;letter-spacing:.14em;font-size:clamp(11px,1vw,14px);color:var(--blue)}
 .mac-url{position:relative;z-index:2;margin-top:6px;font-family:var(--cond);letter-spacing:.16em;font-size:clamp(14px,1.4vw,20px);color:var(--muted)}
+.mac-url a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .3s,color .3s}
+.mac-url a:hover{border-color:currentColor;color:var(--blue)}
+
+/* bloc UGC — lien + QR sous band-intro */
+.ugc-link-block{display:none;flex-direction:column;align-items:center;gap:10px;margin-top:26px}
+body[data-mode="ugc"] .ugc-link-block{display:flex}
+.qr-placeholder{width:81px;height:81px;border:1px dashed var(--line-2);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-size:10px;
+  text-transform:uppercase;letter-spacing:.08em;color:var(--faint);text-align:center;line-height:1.4}
 
 /* fondamentaux equation */
 .found{margin-top:clamp(38px,5vh,64px);display:flex;flex-direction:column;align-items:center;gap:20px}
